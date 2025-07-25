@@ -44,3 +44,5 @@ def registerUser(request):
          a.save()
          messages.success(request, "Account was created Successfully")
          return redirect('register')
+    else:
+        return render(request, 'manager/registration_form.html')
