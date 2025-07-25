@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
@@ -41,3 +41,6 @@ def registerUser(request):
             })
         else:
          a = User(username=username, email=email, password=password)
+         a.save()
+         messages.success(request, "Account was created Successfully")
+         return redirect('register')
