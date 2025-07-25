@@ -11,3 +11,22 @@ class UserForm(forms.ModelForm):
 
 class UpdataForm(forms.ModelForm):
     email = forms.EmailField(max_length=254, help_text='Required field')
+
+    class Meta:
+        model = User
+        fields=['email']
+
+class UpdateProfile(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = ['status_info','profile_picture']
+
+class CreatePost(forms.ModelForm):
+    class Meta:
+        model = Post
+        fields = ['post_text','post_picture']
+
+class CreateComment(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ['comment_text']
