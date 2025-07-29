@@ -1,4 +1,7 @@
 from django.db import models
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 
 # Create your models here.
 class Lead(models.Model):
@@ -20,5 +23,6 @@ class Lead(models.Model):
     #FOREIGN KEY ISSUES
 
 class Agent(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=40)
     last_name = models.CharField(max_length=40)
