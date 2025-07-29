@@ -10,5 +10,9 @@ class Lead(models.Model):
     last_name = models.CharField(max_length=40)
     age = models.IntegerField(default=0)
 
-    phoned = models.BooleanField(default=False)
+    '''phoned = models.BooleanField(default=False)
     source = models.CharField(choices=SOURCE_CHOICES, max_length=100)
+    profile_picture = models.ImageField(blank=True, null=True)
+    file = models.FileField(blank=True, null=True)'''
+
+    #FOREIGN KEY ISSUES
