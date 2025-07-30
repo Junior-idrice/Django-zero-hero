@@ -3,4 +3,8 @@ from django.http import HttpResponse
 # Create your views here.
 
 def home_page(request):
-    return render(request, 'leads/layout.html')
+    context = {
+        "name":"idrice",
+        "age":22
+    }
+    return render(request, 'base.html', context)
