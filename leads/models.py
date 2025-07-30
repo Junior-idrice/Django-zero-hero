@@ -21,7 +21,13 @@ class Lead(models.Model):
     profile_picture = models.ImageField(blank=True, null=True)
     file = models.FileField(blank=True, null=True)'''
 
+    def __str__(self):
+        return f"{self.first_name}- {self.last_name}"
+
     #FOREIGN KEY ISSUES
 
 class Agent(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.user.username
