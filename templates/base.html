@@ -7,6 +7,10 @@
 </head>
 <body>
     this is the second page
-    hi {{name}}, your age is {{age}}
+    <ul>
+        {%for name in names%}
+        <li>{{name}}</li>
+        {%endfor%}
+    </ul>
 </body>
 </html>
