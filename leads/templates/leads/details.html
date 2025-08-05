@@ -14,6 +14,8 @@
             <a href="{{lead.id}}">{{lead.first_name}}--{{lead.last_name}}--{{lead.age}}</a>
         </div>
         {%endfor%}
+        <a href="update/{{lead.pk}}">update</a>
+        <a href="delete/{{lead.pk}}">Delete</a>
     </ul>
 
 </body>
