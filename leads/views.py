@@ -13,5 +13,11 @@ def home_page(request):
 def lead_details(request, pk):
     print(pk)
     lead = Lead.objects.get(id=pk)
+    context={
+        "lead":lead
+    }
     print(lead)
     return render(request, 'leads/details.html',context)
+
+def lead_create(request):
+    return render(request, "leads/lead_create.html")

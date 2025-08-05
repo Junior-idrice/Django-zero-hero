@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>These are the details {{lead.first_name}}</h1>
+    <ul>
+        {%for lead in leads%}
+        <div>
+            <a href="{{lead.id}}">{{lead.first_name}}--{{lead.last_name}}--{{lead.age}}</a>
+        </div>
+        {%endfor%}
+    </ul>
+
+</body>
+</html>
