@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 # Create your views here.
 from .models import Lead,Agent
-from .forms import LeadForm
+from .forms import LeadForm,LeadModelForm
 
 def home_page(request):
     leads = Lead.objects.all()
@@ -21,23 +21,14 @@ def lead_details(request, pk):
     return render(request, 'leads/details.html',context)
 
 def lead_create(request):
-    form = LeadForm()
+    form = LeadModelForm()
     if request.method == "POST":
         print("received")
-        form = LeadForm(request.POST)
+        form = LeadModelForm(request.POST)
         if form.is_valid():
             print("form valid")
             print(form.cleaned_data)
-            first_name = form.cleaned_data['first_name']
-            last_name = form.cleaned_data['last_name']
-            age = form.cleaned_data['age']
-            agent = Agent.objects.first()
-            Lead.objects.create(
-                first_name = first_name,
-                last_name = last_name,
-                age = age,
-                agent = agent
-            )
+            form.save()
             print("lead created")
             return redirect('/')
     context = {
