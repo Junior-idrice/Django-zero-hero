@@ -6,6 +6,14 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Let's go idrice</h1>
+    <h1>These are all the leads</h1>
+    <ul>
+        {%for lead in leads%}
+        <div>
+            <a href="{{lead.id}}">{{lead.first_name}}--{{lead.last_name}}--{{lead.age}}</a>
+        </div>
+        {%endfor%}
+    </ul>
+
 </body>
 </html>
