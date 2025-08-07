@@ -5,7 +5,7 @@ app_name = "leads"
 
 urlpatterns =[
     path('landing',views.landing, name="landing"),
-    path('', views.home_page, name="index"),
+    path('', views.LeadListView.as_view(),name="index"),
     path('<int:pk>', views.lead_details, name="details"),
     #path("details", views.lead_details, det),
     path("create/", views.lead_create, name="create"),

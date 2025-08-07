@@ -20,8 +20,7 @@ from leads.views import LadingPage
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include("leads.urls", namespace="leads")),
-    path()
+    path('',include("leads.urls", namespace="leads"))
 
 ]
 
