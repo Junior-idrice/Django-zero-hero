@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    this is the second page
-    <ul>
-        {%for name in names%}
-        <li>{{name}} </li>
-        {%endfor%}
-    </ul>
+    <div class="max-w-7xl mx-auto bg-green-100">
+    {%include 'leads/navbar.html'%}    
+    {%block content%}
+    {%endblock%}
+
+    </div>
+  
 </body>
 </html>

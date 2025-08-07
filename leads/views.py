@@ -4,6 +4,9 @@ from django.http import HttpResponse
 from .models import Lead,Agent
 from .forms import LeadForm,LeadModelForm
 
+def landing(request):
+    return render(request, 'landing.html')
+
 def home_page(request):
     leads = Lead.objects.all()
     context = {
