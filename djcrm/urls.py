@@ -16,9 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-
+from leads.views import LadingPage
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include("leads.urls", namespace="leads"))
+    path('',include("leads.urls", namespace="leads")),
+    path()
+
 ]
+
+#CRUD+L : CREATE RETRIERVE UPDATE AND DELETE VIEWS+LIST

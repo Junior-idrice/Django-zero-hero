@@ -4,6 +4,8 @@ from django.http import HttpResponse
 from .models import Lead,Agent
 from .forms import LeadForm,LeadModelForm
 
+from django.views.generic import TemplateView
+
 def landing(request):
     return render(request, 'landing.html')
 
@@ -57,3 +59,8 @@ def delete(request,pk):
     lead = Lead.objects.get(id=pk)
     lead.delete()
     return redirect('/')
+
+
+#class based views
+class LadingPage(TemplateView):
+    template_name = "landing.html"
